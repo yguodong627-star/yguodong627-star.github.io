@@ -32,7 +32,9 @@ npm run preview
 
 ## 发布与更新
 
-仓库计划使用 `yguodong627-star.github.io`。GitHub 仓库的 Settings → Pages 使用 GitHub Actions 发布。工作流 `.github/workflows/pages.yml` 安装锁定依赖、检查资源、构建并部署 `dist/`；更新 `main` 后重新发布。
+网站已发布：<https://yguodong627-star.github.io/>
+
+公开仓库：<https://github.com/yguodong627-star/yguodong627-star.github.io>。GitHub 仓库的 Settings → Pages 使用 GitHub Actions 发布。工作流 `.github/workflows/pages.yml` 安装锁定依赖、检查资源、构建并部署 `dist/`；更新 `main` 后重新发布。
 
 发布流程参考 [GitHub Pages 文档](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) 与 [Vite 静态部署指南](https://vite.dev/guide/static-deploy.html#github-pages)。自定义域名 `ysdtn.com` 将在默认地址验证通过后单独配置。
 
