@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+.env*
+
+# Local review artifacts and release archives
+preview*.png
+preview*.jpg
+*.zip
+*.tar.gz
+*.log
