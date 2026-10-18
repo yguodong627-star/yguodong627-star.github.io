@@ -25,8 +25,16 @@ function App() {
   const [overHero, setOverHero] = useState(true);
   const video = useRef<HTMLVideoElement>(null);
   const home = path === '/';
-  const contactInvite = home || path === '/about';
   const works = path === '/works' || path.startsWith('/works/');
+  const footerCopy = home
+    ? { label: '05 / KEEP IN TOUCH', title: '让想法，继续发生。', description: '欢迎通过邮箱、电话或微信与我交流。' }
+    : works
+      ? { label: 'WORK / KEEP IN TOUCH', title: '把想法做实，把体验做好。', description: '关于使用体验、产品建议或新的想法，欢迎与我交流。' }
+      : path === '/articles' || path.startsWith('/articles/')
+        ? { label: 'WRITING / KEEP IN TOUCH', title: '写下思考，也期待回响。', description: '关于 AI、产品与写作，欢迎分享你的看法。' }
+        : path === '/about'
+          ? { label: '03 / GET IN TOUCH', title: '从一个想法，开始聊聊。', description: '欢迎通过邮箱、电话或微信与我交流。' }
+          : null;
   usePageMotion(path);
   useEffect(() => {
     if (!home) return;
@@ -105,7 +113,7 @@ function App() {
         : path.startsWith('/articles/') && articles.find(a => `/articles/${a.slug}` === path) ? <ArticlePage key={path} article={articles.find(a => `/articles/${a.slug}` === path)!}/>
         : <section className="page-shell inner-page"><PageTitle kicker="404" title={t("这一页还没有故事。")} description="回到首页，继续探索。"/><Button asChild><a href="#/">{t("返回首页")}<ArrowRight size={16}/></a></Button></section>}
     </main>
-    <footer className={`rich-footer ${contactInvite ? 'footer-with-invite' : ''}`}><div className="page-shell"><div className="footer-top"><div className="footer-intro">{contactInvite ? <><p className="section-index">{home ? '05 / KEEP IN TOUCH' : '03 / GET IN TOUCH'}</p><h2>{t(home ? '让想法，继续发生。' : '从一个想法，开始聊聊。')}</h2><p>{t("欢迎通过邮箱、电话或微信与我交流。")}</p></> : <><a className="footer-brand" href="#/">YANG</a><p>{t("把想法写下来，把灵感做出来。")}</p></>}</div><nav aria-label={t("页脚导航")}><span>{t("导航 / MENU")}</span>{nav.map(n => <a key={n.path} href={`#${n.path}`}>{t(n.label)}</a>)}</nav><div className="footer-contact"><span>{t("联系 / CONTACT")}</span><ContactMethods/><a href={profile.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></div><div className="footer-bottom"><span className="footer-signature">{contactInvite && <a className="footer-brand" href="#/">YANG</a>}<span>© {new Date().getFullYear()} {t("杨国栋")}</span></span><span>THOUGHTS & CREATIONS</span></div></div></footer>
+    <footer className={`rich-footer ${footerCopy ? 'footer-with-invite' : ''}`}><div className="page-shell"><div className="footer-top"><div className="footer-intro">{footerCopy ? <><p className="section-index">{footerCopy.label}</p><h2>{t(footerCopy.title)}</h2><p>{t(footerCopy.description)}</p></> : <><a className="footer-brand" href="#/">YANG</a><p>{t("把想法写下来，把灵感做出来。")}</p></>}</div><nav aria-label={t("页脚导航")}><span>{t("导航 / MENU")}</span>{nav.map(n => <a key={n.path} href={`#${n.path}`}>{t(n.label)}</a>)}</nav><div className="footer-contact"><span>{t("联系 / CONTACT")}</span><ContactMethods/><a className="footer-github" href={profile.github} target="_blank" rel="noreferrer" title={t("在新标签页打开 GitHub 主页")}><Github size={18} aria-hidden="true"/><span>{t("前往 GitHub 主页")}</span><ArrowUpRight size={16} aria-hidden="true"/></a></div></div><div className="footer-bottom"><span className="footer-signature">{footerCopy && <a className="footer-brand" href="#/">YANG</a>}<span>© {new Date().getFullYear()} {t("杨国栋")}</span></span><span>THOUGHTS & CREATIONS</span></div></div></footer>
   </>;
 }
 function ContactMethods() {

@@ -176,3 +176,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible {
 .footer-signature .footer-brand{font-size:18px;line-height:1}
 @media(max-width:900px){.footer-with-invite .footer-top{gap:28px;grid-template-columns:1.3fr .6fr 1fr}.footer-intro h2{font-size:30px}}
 @media(max-width:640px){.footer-with-invite{padding-top:42px}.footer-with-invite .footer-top{grid-template-columns:.65fr 1fr;gap:34px 24px;padding-bottom:32px}.footer-intro h2{font-size:29px;margin-top:18px}.footer-signature{gap:12px}.footer-signature .footer-brand{font-size:16px}}
+.footer-contact>.footer-github{display:inline-flex;align-items:center;gap:10px;max-width:100%;min-height:44px;padding:11px 15px;border:1px solid #edf0e9;border-radius:28px;background:#edf0e9;color:#142f3c;font-size:12px;line-height:1.5;transition:background .2s,border-color .2s}
+.footer-github>svg{flex:none}
+.footer-github>span{min-width:0}
+.footer-contact>.footer-github:hover{background:#fff;border-color:#fff;color:#142f3c}
+@media(max-width:640px){.footer-contact>.footer-github{font-size:11px;padding:10px 12px;gap:7px}}
