@@ -150,3 +150,18 @@ a:focus-visible,button:focus-visible,summary:focus-visible {
   .reading-page .back-link { margin-bottom: 30px; }
   .project-overview h2,.project-gallery h2 { font-size: 26px; }
 }
+
+/* Public contact details, shared by the home page, About and footer. */
+.contact-actions{display:grid;gap:22px;min-width:280px}
+.contact-actions>.contact-button{justify-self:start}
+.contact-methods{display:grid;gap:18px;font-style:normal;margin:0}
+.contact-methods>a{display:flex;align-items:center;gap:13px;color:#e1e9ee;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.contact-methods>a>svg{flex:none;color:#8caab7}
+.contact-methods>a>span{display:grid;gap:3px}
+.contact-methods small{font-size:10px;color:#93aebb;font-weight:400}
+.contact-methods>a>svg:last-child{margin-left:auto}
+.contact-methods>a:hover{color:#fff}
+.footer-contact .contact-methods{margin-bottom:22px}
+.footer-contact .contact-methods>a{font-size:13px}
+.footer-contact .contact-methods small{font-size:9px}
+@media(max-width:640px){.contact-actions{min-width:0;width:100%}.contact-methods>a{font-size:14px}.contact-methods{max-width:340px}}
