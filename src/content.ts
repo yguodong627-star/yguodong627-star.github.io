@@ -16,217 +16,312 @@ export type ArticleBlock =
 export type Article = { slug: string; title: string; date: string; summary: string; tag: string; cover: string; minutes: number; blocks: ArticleBlock[] };
 export type Project = {
   slug: string; title: string; english: string; tagline: string; description: string;
-  category: 'AI 交互' | '生活工具' | '视觉实验' | '待确认';
-  tag: string; image: string; screenshots: string[]; url: string; github: string;
+  category: '文档工具' | '工作效率' | '经营工具' | '生活工具' | '信息整理';
+  tag: string; coverLabel: string; image: string; screenshots: string[]; url: string; github: string;
   features: string[]; note?: string; featured?: boolean; pending?: boolean;
 };
-export const articles = articleData as Article[];
+export const articles = [...articleData as Article[]].sort((a, b) => b.date.localeCompare(a.date));
 export const projects: Project[] = [
   {
-    "slug": "answers-book",
-    "title": "答案之书",
-    "english": "THE BOOK OF ANSWERS",
-    "tagline": "把犹豫，交给一页纸。",
+    "slug": "zhoubao",
+    "title": "周报台",
+    "english": "WEEKLY DESK",
+    "tagline": "让零散信息，成为周报的起点。",
+    "description": "适合需要写周报和跟踪行业动态的产品、运营人员，在周末汇总时，聚合关注的信息源整理周报素材。部分国内站点因浏览器限制可能抓不到。",
+    "category": "信息整理",
+    "tag": "信息聚合 / 周报素材",
+    "image": "./media/portfolio/screens/zhoubao.webp",
+    "screenshots": [
+      "./media/portfolio/screens/zhoubao.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-zhoubao/",
+    "github": "https://github.com/yguodong627-star/vibe-zhoubao",
+    "features": [
+      "聚合关注的信息源",
+      "整理周报素材"
+    ],
+    "note": "部分国内站点受浏览器限制，可能无法抓取。",
+    "featured": true,
+    "coverLabel": "聚合信息源，整理周报素材"
+  },
+  {
+    "slug": "piaoju",
+    "title": "票据夹",
+    "english": "RECEIPT ARCHIVE",
+    "tagline": "让每张票据，都有迹可循。",
+    "description": "适合需要报销和对账的上班族、财务和个体户，在积攒发票票据时，上传图片识别关键信息并归档查找。清晰印刷体效果较好，歪斜或有阴影的图片可能识别失败。",
+    "category": "文档工具",
+    "tag": "票据识别 / 归档查找",
+    "image": "./media/portfolio/screens/piaoju.webp",
+    "screenshots": [
+      "./media/portfolio/screens/piaoju.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-piaoju/",
+    "github": "https://github.com/yguodong627-star/vibe-piaoju",
+    "features": [
+      "上传票据图片",
+      "识别票据关键信息",
+      "归档与查找票据"
+    ],
+    "note": "清晰印刷体识别效果较好；歪斜或带有阴影的图片可能识别失败，请核对识别结果。",
+    "featured": true,
+    "coverLabel": "识别票据信息，归档查找"
+  },
+  {
+    "slug": "zhuanwen",
+    "title": "转文",
+    "english": "TEXT LENS",
+    "tagline": "把杂乱的文字，整理成可用的资料。",
+    "description": "适合整理文本和表格资料的学生与办公人群，把去空行、去重、标点整理和查找替换串成规则链；支持表格互转与批量处理，数据留在浏览器本地。",
+    "category": "文档工具",
+    "tag": "文本清洗 / 表格互转",
+    "image": "./media/portfolio/screens/zhuanwen.webp",
+    "screenshots": [
+      "./media/portfolio/screens/zhuanwen.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-zhuanwen/",
+    "github": "https://github.com/yguodong627-star/vibe-zhuanwen",
+    "features": [
+      "组合文本清洗规则，去空行与重复行",
+      "整理中英文排版与标点",
+      "提取邮箱、链接等文本内容",
+      "表格互转与批量处理"
+    ],
+    "note": "数据在浏览器本地处理，整理完成后可复制或下载结果。",
+    "featured": true,
+    "coverLabel": "清洗文本，转换表格数据"
+  },
+  {
+    "slug": "pdfbox",
+    "title": "页匠 PDF 工具箱",
+    "english": "PDF WORKSHOP",
+    "tagline": "让文档处理，少几次辗转。",
+    "description": "适合上班族、学生和行政人员，在处理合同、资料时，本地完成合并、拆分、水印、签名、转图片和压缩 PDF，文件不出本机。",
+    "category": "文档工具",
+    "tag": "本地处理 / PDF 工具箱",
+    "image": "./media/portfolio/screens/pdfbox.webp",
+    "screenshots": [
+      "./media/portfolio/screens/pdfbox.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-pdfbox/",
+    "github": "https://github.com/yguodong627-star/vibe-pdfbox",
+    "features": [
+      "PDF 合并与拆分",
+      "添加水印与签名",
+      "PDF 转图片与压缩",
+      "文件在本机处理，无需上传"
+    ],
+    "featured": true,
+    "coverLabel": "合并、拆分与处理 PDF"
+  },
+  {
+    "slug": "gongzuotai",
+    "title": "工作台",
+    "english": "TASK STUDIO",
+    "tagline": "让每天的进展，一目了然。",
+    "description": "适合个人安排每天的待办和任务时，用看板拖动卡片管理进度。",
+    "category": "工作效率",
+    "tag": "任务看板 / 进度管理",
+    "image": "./media/portfolio/screens/gongzuotai.webp",
+    "screenshots": [
+      "./media/portfolio/screens/gongzuotai.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-gongzuotai/",
+    "github": "https://github.com/yguodong627-star/vibe-gongzuotai",
+    "features": [
+      "安排每日待办和任务",
+      "拖动看板卡片管理进度"
+    ],
+    "coverLabel": "拖动任务卡片，管理工作进度"
+  },
+  {
+    "slug": "crm",
+    "title": "客簿",
+    "english": "CLIENT NOTES",
+    "tagline": "把每次跟进，接成一条线。",
+    "description": "适合自由职业者和独立经营者，在跟进客户时，记录客户信息和跟进情况，不用上复杂的 CRM。",
+    "category": "经营工具",
+    "tag": "客户记录 / 跟进管理",
+    "image": "./media/portfolio/screens/crm.webp",
+    "screenshots": [
+      "./media/portfolio/screens/crm.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-crm/",
+    "github": "https://github.com/yguodong627-star/vibe-crm",
+    "features": [
+      "记录客户信息",
+      "记录与跟踪客户跟进情况"
+    ],
+    "coverLabel": "记录客户，跟进项目与报价",
+    "note": "数据仅保存在当前浏览器；当前实站为单人使用，不支持多人协作。提醒仅在打开页面时显示。"
+  },
+  {
+    "slug": "kaidan",
+    "title": "开单",
+    "english": "INVOICE DESK",
+    "tagline": "从报价到开单，清楚又利落。",
+    "description": "适合小商家、个体户和自由职业者，在给客户报价、出销售单时，快速开出规范的单据并保存导出，不用再手写或套 Excel。",
+    "category": "经营工具",
+    "tag": "报价开单 / 保存导出",
+    "image": "./media/portfolio/screens/kaidan.webp",
+    "screenshots": [
+      "./media/portfolio/screens/kaidan.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-kaidan/",
+    "github": "https://github.com/yguodong627-star/vibe-kaidan",
+    "features": [
+      "快速制作报价与销售单",
+      "保存与导出单据"
+    ],
+    "coverLabel": "制作报价单，保存导出"
+  },
+  {
+    "slug": "profit-calc",
+    "title": "利润定价计算器",
+    "english": "PRICING LAB",
+    "tagline": "每一次定价，都有依据。",
+    "description": "适合电商卖家、摆摊和小店老板，在定价或调价时，输入成本、费用和目标利润率，算出不亏钱的售价和实际利润，避免凭感觉定价。",
+    "category": "经营工具",
+    "tag": "成本测算 / 利润定价",
+    "image": "./media/portfolio/screens/profit-calc.webp",
+    "screenshots": [
+      "./media/portfolio/screens/profit-calc.webp"
+    ],
+    "url": "https://yguodong627-star.github.io/vibe-profit-calc/",
+    "github": "https://github.com/yguodong627-star/vibe-profit-calc",
+    "features": [
+      "输入成本、费用和目标利润率",
+      "计算不亏钱的售价",
+      "查看实际利润"
+    ],
+    "coverLabel": "算清成本、售价与利润",
+    "note": "计算依赖输入的成本、费率与汇率；结果为估算，请结合实际账单核对。"
+  },
+  {
+    "slug": "fenhao",
+    "title": "分好",
+    "english": "FAIR SHARE",
+    "tagline": "一起花的钱，清清楚楚地分。",
+    "description": "适合聚餐、出游和合租的朋友同事，在多人垫付费用后，算出每人该付多少、最少转账几次。",
     "category": "生活工具",
-    "tag": "双语启发 / 收藏与分享",
-    "description": "为日常小事犹豫时，默念问题，轻轻翻开书，获得一句中英双语启发。翻书动画与纸页声音带来安静的阅读体验，还能收藏答案、记录问题，并生成纸质卡片保存或分享。",
-    "features": [
-      "翻书动画与纸页声音，呈现中英双语启发",
-      "收藏答案，记录当时的问题与备注",
-      "生成纸质分享卡片，保存或分享",
-      "网页无需登录，收藏、历史与备注保存在当前浏览器"
-    ],
-    "note": "体验链接打开的是可交互网页版。另有 iOS 原生应用，暂未上架；iOS 与网页数据不互通。手机宽度截图展示的是网页效果。",
-    "image": "./media/portfolio/09-answers-book/screenshot-1.jpg",
+    "tag": "多人分账 / 转账优化",
+    "image": "./media/portfolio/screens/fenhao.webp",
     "screenshots": [
-      "./media/portfolio/09-answers-book/screenshot-1.jpg",
-      "./media/portfolio/09-answers-book/screenshot-2.jpg",
-      "./media/portfolio/09-answers-book/screenshot-3.jpg",
-      "./media/portfolio/09-answers-book/screenshot-4.jpg",
-      "./media/portfolio/09-answers-book/screenshot-5.jpg",
-      "./media/portfolio/09-answers-book/share-card.png"
+      "./media/portfolio/screens/fenhao.webp"
     ],
-    "url": "https://answers-book-ethan.yguodong627.chatgpt.site",
-    "github": "https://github.com/yguodong627-star/answers-book"
+    "url": "https://yguodong627-star.github.io/vibe-fenhao/",
+    "github": "https://github.com/yguodong627-star/vibe-fenhao",
+    "features": [
+      "计算多人垫付后的分摊金额",
+      "计算更少转账次数的结算方案"
+    ],
+    "coverLabel": "多人分账，减少结算转账"
   },
   {
-    "slug": "tomjerry-chat",
-    "title": "猫和老鼠聊天小屋",
-    "english": "TOM & JERRY",
-    "tagline": "和熟悉的角色，说点新鲜的。",
-    "category": "AI 交互",
-    "tag": "语音聊天 / 角色互动",
-    "description": "和汤姆、杰瑞、斯派克语音聊天。角色说话时会开合嘴巴、眨眼，也可以切换模型，让对话更有陪伴感。",
-    "features": [
-      "汤姆、杰瑞、斯派克三个角色可切换",
-      "语音对话与角色表情联动",
-      "支持切换模型"
-    ],
-    "featured": true,
-    "image": "./media/portfolio/01-tomjerry-chat/screenshot-1.png",
-    "screenshots": [
-      "./media/portfolio/01-tomjerry-chat/screenshot-1.png",
-      "./media/portfolio/01-tomjerry-chat/screenshot-2.png",
-      "./media/portfolio/01-tomjerry-chat/screenshot-3.png"
-    ],
-    "url": "https://yguodong627-star.github.io/tomjerry-chat/",
-    "github": "https://github.com/yguodong627-star/tomjerry-chat"
-  },
-  {
-    "slug": "lockscreen-cat",
-    "title": "锁屏萌宠",
-    "english": "LOCKSCREEN CAT",
-    "tagline": "把日常，交给一只小萌宠。",
+    "slug": "caiwu",
+    "title": "细水账",
+    "english": "FLOW LEDGER",
+    "tagline": "把日常开销，理成生活的线索。",
+    "description": "适合想搞清楚钱花在哪的个人和家庭，在月底复盘时，导入支付宝、微信账单，按类别统计支出。",
     "category": "生活工具",
-    "tag": "iOS App / 锁屏小组件",
-    "description": "用锁屏里的小猫、小狗回应步数与睡眠变化。每天一句吐槽或鼓励，也能生成卡片分享，让日常记录多一点温度。",
-    "features": [
-      "读取步数和睡眠，驱动萌宠表情变化",
-      "小猫、小狗形象，以及每日吐槽或鼓励",
-      "生成分享卡片；另提供网页版演示"
-    ],
-    "note": "体验链接打开的是网页版演示。iOS App 需要在 Mac 上通过 Xcode 安装。",
-    "featured": true,
-    "image": "./media/portfolio/02-lockscreen-cat/screenshot-2.png",
+    "tag": "账单导入 / 支出分析",
+    "image": "./media/portfolio/screens/caiwu.webp",
     "screenshots": [
-      "./media/portfolio/02-lockscreen-cat/screenshot-1.png",
-      "./media/portfolio/02-lockscreen-cat/screenshot-2.png",
-      "./media/portfolio/02-lockscreen-cat/screenshot-3.png"
+      "./media/portfolio/screens/caiwu.webp"
     ],
-    "url": "https://yguodong627-star.github.io/lockscreen-cat/",
-    "github": "https://github.com/yguodong627-star/lockscreen-cat"
-  },
-  {
-    "slug": "ridge",
-    "title": "岚山",
-    "english": "RIDGE",
-    "tagline": "把一座山，放进此刻。",
-    "category": "视觉实验",
-    "tag": "生成山景 / 动态壁纸",
-    "description": "随真实时间变化的层叠山景。可以分享同一座山，也能导出 iPhone 壁纸，让屏幕成为一处安静的风景。",
+    "url": "https://yguodong627-star.github.io/vibe-caiwu/",
+    "github": "https://github.com/yguodong627-star/vibe-caiwu",
     "features": [
-      "山景随真实时间变化",
-      "通过链接分享同一座山",
-      "导出 iPhone 壁纸"
+      "导入支付宝与微信账单",
+      "按类别统计支出"
     ],
-    "featured": true,
-    "image": "./media/portfolio/07-ridge/screenshot-1.png",
-    "screenshots": [
-      "./media/portfolio/07-ridge/screenshot-1.png",
-      "./media/portfolio/07-ridge/screenshot-2.png"
-    ],
-    "url": "https://yguodong627-star.github.io/vibe-ridge/",
-    "github": "https://github.com/yguodong627-star/vibe-ridge"
+    "coverLabel": "导入账单，看清支出"
   },
   {
     "slug": "subwake",
     "title": "订醒",
     "english": "SUBWAKE",
-    "tagline": "让每一笔订阅，心里有数。",
+    "tagline": "让续费之前，多一次主动选择。",
+    "description": "适合订阅了很多会员和软件的人，在订阅快到期续费前，管理订阅并提醒，避免忘记取消被自动扣费。",
     "category": "生活工具",
-    "tag": "订阅管理 / 本地数据",
-    "description": "把每月、全年订阅开销和近期扣费放在一张台账里。查看下周账单、留意试用到期，数据只保存在浏览器本地。",
-    "features": [
-      "汇总每月和全年订阅开销",
-      "查看下周扣费与试用到期提醒",
-      "数据只保存在当前浏览器本地"
-    ],
-    "note": "数据保存在浏览器本地。更换设备或清除浏览器数据时，需注意保留自己的记录。",
-    "featured": true,
-    "image": "./media/portfolio/08-subwake/screenshot-1.png",
+    "tag": "订阅管理 / 续费提醒",
+    "image": "./media/portfolio/screens/subwake.webp",
     "screenshots": [
-      "./media/portfolio/08-subwake/screenshot-1.png",
-      "./media/portfolio/08-subwake/screenshot-2.png"
+      "./media/portfolio/screens/subwake.webp"
     ],
     "url": "https://yguodong627-star.github.io/vibe-subwake/",
-    "github": "https://github.com/yguodong627-star/vibe-subwake"
+    "github": "https://github.com/yguodong627-star/vibe-subwake",
+    "features": [
+      "集中管理会员与软件订阅",
+      "订阅到期与续费提醒"
+    ],
+    "coverLabel": "管理订阅，留意续费",
+    "note": "数据保存在当前浏览器。续费与试用提醒在页面内显示，请自行留意到期时间并定期备份。"
   },
   {
-    "slug": "ink-bloom",
-    "title": "墨韵",
-    "english": "INK BLOOM",
-    "tagline": "一点墨，慢慢晕开。",
-    "category": "视觉实验",
-    "tag": "水墨互动 / PNG 导出",
-    "description": "在宣纸上点按或拖动落墨，看墨色像水墨一样缓缓晕开。可以切换墨色、清空画面，也能将作品导出为 PNG。",
-    "features": [
-      "在宣纸上点按或拖动落墨，观看水墨晕染",
-      "切换墨色与清空画面",
-      "将画面导出为 PNG"
-    ],
-    "image": "./media/portfolio/03-ink-bloom/screenshot-1.png",
+    "slug": "liteshot",
+    "title": "压片 LiteShot",
+    "english": "LITESHOT",
+    "tagline": "让图片轻一点，让传递快一点。",
+    "description": "适合运营、设计和普通办公人群，在发图、传文件或上传网站被体积限制时，在浏览器本地压缩图片，不上传、不泄露。",
+    "category": "文档工具",
+    "tag": "图片压缩 / 本地处理",
+    "image": "./media/portfolio/screens/liteshot.webp",
     "screenshots": [
-      "./media/portfolio/03-ink-bloom/screenshot-1.png",
-      "./media/portfolio/03-ink-bloom/screenshot-2.png",
-      "./media/portfolio/03-ink-bloom/screenshot-5.png",
-      "./media/portfolio/03-ink-bloom/screenshot-6.png"
+      "./media/portfolio/screens/liteshot.webp"
     ],
-    "url": "https://yguodong627-star.github.io/vibe-ink-bloom/",
-    "github": "https://github.com/yguodong627-star/vibe-ink-bloom"
+    "url": "https://yguodong627-star.github.io/vibe-liteshot/",
+    "github": "https://github.com/yguodong627-star/vibe-liteshot",
+    "features": [
+      "在浏览器本地压缩图片",
+      "图片无需上传"
+    ],
+    "coverLabel": "批量压缩与处理图片"
   },
   {
-    "slug": "tide-breath",
-    "title": "潮息",
-    "english": "TIDE BREATH",
-    "tagline": "跟着潮水，慢一点呼吸。",
-    "category": "生活工具",
-    "tag": "呼吸节奏 / 放松练习",
-    "description": "跟随潮水般的视觉节奏进行呼吸练习。提供平静、方块与 4-7-8 三种模式，为睡前或日常休息留一段安静的时间。",
-    "features": [
-      "平静、方块、4-7-8 三种呼吸模式",
-      "视觉节奏引导呼吸过程",
-      "适用于日常休息与睡前放松"
-    ],
-    "image": "./media/portfolio/05-tide-breath/screenshot-2.png",
+    "slug": "shoujixiang",
+    "title": "拾页",
+    "english": "PAGE COLLECTION",
+    "tagline": "把读过的好内容，留下来。",
+    "description": "适合经常看文章做资料积累的人，在浏览网页时，收藏链接并摘录要点，建立个人资料库。",
+    "category": "信息整理",
+    "tag": "网页收藏 / 要点摘录",
+    "image": "./media/portfolio/screens/shoujixiang.webp",
     "screenshots": [
-      "./media/portfolio/05-tide-breath/screenshot-1.png",
-      "./media/portfolio/05-tide-breath/screenshot-2.png"
+      "./media/portfolio/screens/shoujixiang.webp"
     ],
-    "url": "https://yguodong627-star.github.io/vibe-tide-breath/",
-    "github": "https://github.com/yguodong627-star/vibe-tide-breath"
+    "url": "https://yguodong627-star.github.io/vibe-shoujixiang/",
+    "github": "https://github.com/yguodong627-star/vibe-shoujixiang",
+    "features": [
+      "收藏网页链接",
+      "摘录文章要点",
+      "积累个人资料库"
+    ],
+    "coverLabel": "收藏网页，整理阅读资料"
   },
   {
-    "slug": "hue-weave",
-    "title": "拾色",
-    "english": "HUE WEAVE",
-    "tagline": "把颜色，排成心动的顺序。",
-    "category": "视觉实验",
-    "tag": "色彩益智 / 色卡收集",
-    "description": "通过渐变色排序完成关卡，在游戏中收集色卡。关卡持续生成，还能复制 HEX 或 CSS 色值，把喜欢的配色带走。",
-    "features": [
-      "渐变色排序的益智玩法",
-      "持续生成关卡，通关收集色卡",
-      "复制 HEX 或 CSS 色值"
-    ],
-    "image": "./media/portfolio/06-hue-weave/screenshot-2.png",
+    "slug": "shuanglian",
+    "title": "链记",
+    "english": "LINKED NOTES",
+    "tagline": "让零散的笔记，连接成知识。",
+    "description": "适合希望连接知识、持续复习的学习者，在浏览器本地记录笔记，通过双向链接、标签与图谱梳理关系，并安排间隔复习。",
+    "category": "信息整理",
+    "tag": "双链笔记 / 图谱与复习",
+    "image": "./media/portfolio/screens/shuanglian.webp",
     "screenshots": [
-      "./media/portfolio/06-hue-weave/screenshot-1.png",
-      "./media/portfolio/06-hue-weave/screenshot-2.png"
+      "./media/portfolio/screens/shuanglian.webp",
+      "./media/portfolio/screens/shuanglian-graph.webp"
     ],
-    "url": "https://yguodong627-star.github.io/vibe-hue-weave/",
-    "github": "https://github.com/yguodong627-star/vibe-hue-weave"
-  },
-  {
-    "slug": "loom",
-    "title": "织时 Loom",
-    "english": "LOOM",
-    "tagline": "把专注，织进每一个当下。",
-    "category": "生活工具",
-    "tag": "专注计时 / 本地日志",
-    "description": "按番茄钟节奏在专注、短休、长休之间循环。开始前写下“此刻意图”，完成的专注段会记进“今日织就”日志，数据保存在浏览器本地。",
+    "url": "https://yguodong627-star.github.io/vibe-shuanglian/",
+    "github": "https://github.com/yguodong627-star/vibe-shuanglian",
     "features": [
-      "专注、短休、长休三种计时模式循环",
-      "开始前记录“此刻意图”",
-      "完成的专注段写入“今日织就”日志",
-      "数据保存在浏览器本地"
+      "用双向链接与标签连接笔记",
+      "查看链接图谱与标签图谱",
+      "用挖空和间隔复习回顾知识",
+      "导出 Markdown ZIP 或 JSON 备份"
     ],
-    "image": "./media/portfolio/04-loom/screenshot-1.png",
-    "screenshots": [
-      "./media/portfolio/04-loom/screenshot-1.png",
-      "./media/portfolio/04-loom/screenshot-2.png"
-    ],
-    "url": "https://yguodong627-star.github.io/vibe-loom/",
-    "github": "https://github.com/yguodong627-star/vibe-loom"
+    "coverLabel": "双链笔记，连接知识与复习",
+    "note": "笔记保存在当前浏览器，建议定期导出备份。"
   }
 ];
 

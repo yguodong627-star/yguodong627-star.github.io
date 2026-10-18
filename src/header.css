@@ -1,0 +1,53 @@
+/* A steady navigation bar across light, dark and video pages. */
+:root { --header-height:104px; }
+.site-header,.site-header.over-video {
+  position:fixed;
+  inset:0 0 auto;
+  width:100%;
+  max-width:none;
+  height:var(--header-height);
+  margin:0;
+  padding-inline:max(64px,calc((100% - 1152px)/2));
+  z-index:60;
+  background:rgb(240 239 233 / 94%);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid #20343f1c;
+  box-shadow:0 5px 24px #071a2208;
+}
+.site-header.over-video {
+  background:transparent;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  border-bottom:0;
+  box-shadow:none;
+}
+.works-theme .site-header {
+  background:rgb(9 26 39 / 94%);
+  border-bottom-color:#d4e2e918;
+}
+.site-header:not(.over-video)+main:not(.home-main) { padding-top:var(--header-height); }
+.site-header .mobile-nav {
+  position:absolute;
+  top:calc(100% + 8px);
+  left:24px;
+  right:24px;
+  width:auto;
+  box-shadow:0 14px 35px #071a2233;
+}
+#works-results,#article-results,.home-section,.journal-prose h2,.journal-prose h3 {
+  scroll-margin-top:calc(var(--header-height) + 24px);
+}
+.journal-toc {
+  top:calc(var(--header-height) + 24px);
+  max-height:calc(100svh - var(--header-height) - 48px);
+  overflow-y:auto;
+}
+@media(max-width:900px) {
+  :root { --header-height:96px; }
+  .site-header,.site-header.over-video { padding-inline:40px; }
+}
+@media(max-width:640px) {
+  :root { --header-height:80px; }
+  .site-header,.site-header.over-video { padding-inline:24px; }
+}

@@ -16,7 +16,7 @@
 .journal-cover-link:hover img{transform:scale(1.035)}
 .journal-card-copy{min-width:0}
 .journal-meta{display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:10px;line-height:1.8;color:var(--ink-secondary)}
-.journal-meta>span{display:inline-flex;align-items:center;gap:5px}
+.journal-meta>span,.journal-meta>time{display:inline-flex;align-items:center;gap:5px}
 .journal-meta>span:first-child{color:#456777}
 .journal-card h2{font-size:21px;line-height:1.65;font-weight:500;letter-spacing:-.35px;margin:12px 0}
 .journal-card h2 a:hover{color:#39718b}

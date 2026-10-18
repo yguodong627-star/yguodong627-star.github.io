@@ -1,0 +1,97 @@
+{
+  "checkedOn": "2026-10-18",
+  "timezone": "Asia/Shanghai",
+  "dateMeaning": "依据内容与公开资料安排的网站写作展示日期，并非从原稿恢复的真实创作时间戳。方法文章保留明确的编辑判断，不虚构发布日期证据。",
+  "articles": {
+    "deep-review-document-gates": {
+      "date": "2026-10-16",
+      "notBefore": "2026-10-14",
+      "reason": "Google Research 的 Deep Review 公开发布博客日期为 2026-10-14，内容已提及 Gemini 4 Argon；安排在 10 月 16 日。",
+      "sources": [
+        "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
+      ]
+    },
+    "agent-memory-long-tasks": {
+      "date": "2026-10-14",
+      "notBefore": "2026-10-13",
+      "reason": "Meta 发布于 2026-10-12，美国发布对应北京时间 10 月 13 日；正文对比的 GPT-6 Astra、Sol 和 Fable 5.1 也已在 9 月公开。",
+      "sources": [
+        "https://about.fb.com/news/2026/10/introducing-muse-wonder-models/",
+        "https://developers.openai.com/api/docs/changelog",
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      ]
+    },
+    "token-cost-estimation": {
+      "date": "2026-10-13",
+      "notBefore": "2026-10-07",
+      "reason": "按用户最新要求保留原稿价格，依据原稿中的 2026-10-13 线索安排展示日期；Haiku 5.5 已于 10 月 7 日公开，其他具名模型也已在该日期之前公开。未按现价替换，未将当前 deepseek-flash 的模型映射反推到原稿。正文不额外标注核价日期。",
+      "sources": [
+        "https://developers.openai.com/api/docs/models/gpt-4o",
+        "https://developers.openai.com/api/docs/models/gpt-5",
+        "https://developers.openai.com/api/docs/models/gpt-5-mini",
+        "https://developers.openai.com/api/docs/models/gpt-5-nano",
+        "https://www.anthropic.com/claude-sonnet-5-5",
+        "https://www.anthropic.com/claude-haiku-5-5",
+        "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+        "https://help.aliyun.com/zh/model-studio/model-pricing"
+      ]
+    },
+    "embedding-retrieval": {
+      "date": "2026-10-12",
+      "notBefore": null,
+      "reason": "主要涉及 text-embedding-3 与检索方法，不依赖 2026 年 10 月之后的新模型；结合原始文件的 2026-10-12 日期线索安排。",
+      "sources": [
+        "https://developers.openai.com/api/docs/guides/embeddings",
+        "https://developers.openai.com/api/docs/models/text-embedding-3-small"
+      ]
+    },
+    "ai-feature-prd": {
+      "date": "2026-10-08",
+      "notBefore": null,
+      "reason": "需求定义与验收方法文章，不依赖特定发布事件；日期为按内容编排的展示日期。",
+      "sources": []
+    },
+    "rag-finetuning-context": {
+      "date": "2026-10-06",
+      "notBefore": null,
+      "reason": "方案选择与验收方法文章，不依赖某次新模型或新闻；安排在 2026 年 10 月上旬，早于其向量检索延伸主题。",
+      "sources": [
+        "https://developers.openai.com/api/docs/guides/embeddings"
+      ]
+    },
+    "multi-agent-research": {
+      "date": "2026-10-04",
+      "notBefore": "2025-06-13",
+      "reason": "文中相关多 Agent 研究系统的方法已经于 Anthropic 2025-06-13 官方文章公开；无较新具名模型约束。",
+      "sources": [
+        "https://www.anthropic.com/engineering/multi-agent-research-system"
+      ]
+    },
+    "jev-typed-decisions": {
+      "date": "2026-09-27",
+      "notBefore": "2026-09-15",
+      "reason": "TypeSafe 官方发布文为 2026-09-15；安排在发布后的 9 月 27 日。",
+      "sources": [
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+      ]
+    },
+    "ai-coding-tools": {
+      "date": "2026-09-24",
+      "notBefore": "2025-02-24",
+      "reason": "Claude Code 已在 2025 年 2 月公开；本文为 Cursor、Claude Code、Lovable 工作入口的方法比较，不涉及最新版本参数。",
+      "sources": [
+        "https://www.anthropic.com/news/claude-3-7-sonnet",
+        "https://docs.cursor.com/",
+        "https://docs.lovable.dev/"
+      ]
+    },
+    "agent-refund-workflow": {
+      "date": "2026-09-22",
+      "notBefore": "2024-12-19",
+      "reason": "引用的工作流与 Agent 区分已见于 Anthropic 2024-12-19 文章；正文没有更晚的具名模型或新闻。",
+      "sources": [
+        "https://www.anthropic.com/engineering/building-effective-agents"
+      ]
+    }
+  }
+}
