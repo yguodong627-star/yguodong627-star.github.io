@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="960" height="540" fill="#dce6de"/>
+<g fill="none" stroke="#5c7c6a" stroke-width=".6" opacity=".09"><path d="M465 70V410"/><path d="M500 70V410"/><path d="M535 70V410"/><path d="M570 70V410"/><path d="M605 70V410"/><path d="M640 70V410"/><path d="M675 70V410"/><path d="M710 70V410"/><path d="M745 70V410"/><path d="M780 70V410"/><path d="M815 70V410"/><path d="M850 70V410"/><path d="M885 70V410"/><path d="M465 95H885"/><path d="M465 130H885"/><path d="M465 165H885"/><path d="M465 200H885"/><path d="M465 235H885"/><path d="M465 270H885"/><path d="M465 305H885"/><path d="M465 340H885"/><path d="M465 375H885"/><path d="M465 410H885"/></g>
+<path d="M48 65H912M48 474H912" stroke="#5c7c6a" opacity=".3"/>
+<g fill="#5c7c6a" font-family="Inter,Arial,sans-serif"><text x="48" y="45" font-size="13" letter-spacing="3">YANG / FIELD NOTES</text><text x="912" y="45" font-size="13" text-anchor="end">08</text>
+<text x="48" y="160" font-size="14" letter-spacing="2">MEMORY / FOCUS</text>
+<text x="48" y="234" font-size="32" font-family="Inter,Arial,sans-serif">Remember more.</text>
+<text x="48" y="287" font-size="32" font-family="Inter,Arial,sans-serif">Work for longer.</text>
+<text x="48" y="445" font-size="12" letter-spacing="2">IDEAS · SYSTEMS · PRACTICE</text><text x="48" y="508" font-size="12" letter-spacing="2">AI PRODUCT THINKING</text><text x="912" y="508" font-size="12" text-anchor="end">GUODONG YANG</text></g>
+<g fill="none" stroke="#5c7c6a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="515" y="100" width="225" height="220" rx="12"/><path d="M545 140h120m-120 35h160m-160 35h140m-140 35h80"/><rect x="665" y="245" width="170" height="120" rx="10"/><path d="M705 288h90m-90 28h65m-215 4v45h90m-15-10 15 10-15 10"/></g></svg>

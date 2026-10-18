@@ -50,7 +50,7 @@ function App() {
   useEffect(() => {
     const article = articles.find(a => `/articles/${a.slug}` === path);
     const project = projects.find(p => `/works/${p.slug}` === path);
-    document.title = home ? t('YANG · 杨国栋 — 不断前进的AI产品经理') : `${t(article?.title ?? project?.title ?? nav.find(n => n.path === path)?.label ?? '页面未找到')} — YANG`;
+    document.title = home ? t('YANG · 杨国栋 — 不断前进的AI产品经理') : `${article?.title ?? t(project?.title ?? nav.find(n => n.path === path)?.label ?? '页面未找到')} — YANG`;
     if (home && window.matchMedia('(prefers-reduced-motion: reduce)').matches) { video.current?.pause(); setPaused(true); }
   }, [path, home, language]);
   useEffect(() => {

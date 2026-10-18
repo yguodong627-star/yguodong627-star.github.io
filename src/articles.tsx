@@ -21,9 +21,9 @@ function Inline({ text }: { text: string }) {
 }
 
 export function ArticleCard({ article, compact = false }: { article: Article; compact?: boolean }) {
-  useLanguage();
+  const language = useLanguage();
   return <article className={`journal-card ${compact ? 'journal-card-compact' : ''}`}>
-    <a className="journal-cover-link" href={`#/articles/${article.slug}`} aria-label={t(`阅读${article.title}`)}><img src={article.cover} alt={t(`${article.title}主题封面`)} loading="lazy" decoding="async"/></a>
+    <a className="journal-cover-link" href={`#/articles/${article.slug}`} aria-label={t(`阅读${article.title}`)}><img src={language === 'en' ? article.cover.replace('/articles/', '/articles/en/') : article.cover} alt={t(`${article.title}主题封面`)} loading="lazy" decoding="async"/></a>
     <div className="journal-card-copy"><div className="journal-meta"><span>{t(article.tag)}</span><time dateTime={article.date}>{article.date}</time></div><h2><a href={`#/articles/${article.slug}`}>{t(article.title)}</a></h2><p>{t(article.summary)}</p><div className="journal-card-bottom"><a href={`#/articles/${article.slug}`} className="journal-read-button">{t("阅读全文")}<ArrowUpRight size={15}/></a><span className="journal-reading-time">{readTime(article.minutes)}</span></div></div>
   </article>;
 }
@@ -71,7 +71,7 @@ export function ArticlePage({ article }: { article: Article }) {
   return <article className="page-shell journal-post">
     <a className="back-link" href="#/articles"><ArrowLeft size={15}/>{t("全部文章")}</a>
     <header className="journal-post-header"><div className="journal-meta"><span>{t(article.tag)}</span><time dateTime={article.date}>{article.date}</time><span>{readTime(article.minutes)}</span></div><h1 lang="zh-CN">{article.title}</h1><p lang="zh-CN">{article.summary}</p><div className="journal-byline"><span className="journal-avatar" aria-hidden="true">Y</span><span>{t("杨国栋")}<small>{t("AI 产品经理")}</small></span></div></header>
-    <p className="article-language-note" hidden={language !== 'en'}>{t('文章正文保留中文原文。')}</p><figure className="journal-post-cover"><img src={article.cover} alt={t(`${article.title}主题封面`)}/></figure>
+    <p className="article-language-note" hidden={language !== 'en'}>{t('文章正文保留中文原文。')}</p><figure className="journal-post-cover"><img src={language === 'en' ? article.cover.replace('/articles/', '/articles/en/') : article.cover} alt={t(`${article.title}主题封面`)}/></figure>
     <details className="journal-mobile-toc"><summary><List size={16}/>{t("本文目录")}<span>{itemCount(headings.length, 'sections')}</span></summary>{toc}</details>
     <div className="journal-reading-layout"><div className="journal-prose" lang="zh-CN">{article.blocks.map((block, i) => <BodyBlock key={i} block={block} index={i}/>)}<div className="journal-endmark">— END —</div></div><aside className="journal-reading-sidebar"><div className="journal-toc"><p className="section-index">{t("ON THIS PAGE / 本文目录")}</p>{toc}<a className="journal-toc-back" href="#/articles"><ArrowLeft size={13}/>{t("返回文章列表")}</a></div></aside></div>
 

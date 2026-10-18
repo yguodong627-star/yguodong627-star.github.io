@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="960" height="540" fill="#dce7df"/>
+<g fill="none" stroke="#547867" stroke-width=".6" opacity=".09"><path d="M465 70V410"/><path d="M500 70V410"/><path d="M535 70V410"/><path d="M570 70V410"/><path d="M605 70V410"/><path d="M640 70V410"/><path d="M675 70V410"/><path d="M710 70V410"/><path d="M745 70V410"/><path d="M780 70V410"/><path d="M815 70V410"/><path d="M850 70V410"/><path d="M885 70V410"/><path d="M465 95H885"/><path d="M465 130H885"/><path d="M465 165H885"/><path d="M465 200H885"/><path d="M465 235H885"/><path d="M465 270H885"/><path d="M465 305H885"/><path d="M465 340H885"/><path d="M465 375H885"/><path d="M465 410H885"/></g>
+<path d="M48 65H912M48 474H912" stroke="#547867" opacity=".3"/>
+<g fill="#547867" font-family="Inter,Arial,sans-serif"><text x="48" y="45" font-size="13" letter-spacing="3">YANG / FIELD NOTES</text><text x="912" y="45" font-size="13" text-anchor="end">03</text>
+<text x="48" y="160" font-size="14" letter-spacing="2">AGENT / ACTION</text>
+<text x="48" y="234" font-size="32" font-family="Inter,Arial,sans-serif">From answers</text>
+<text x="48" y="287" font-size="32" font-family="Inter,Arial,sans-serif">to action.</text>
+<text x="48" y="445" font-size="12" letter-spacing="2">IDEAS · SYSTEMS · PRACTICE</text><text x="48" y="508" font-size="12" letter-spacing="2">AI PRODUCT THINKING</text><text x="912" y="508" font-size="12" text-anchor="end">GUODONG YANG</text></g>
+<g fill="none" stroke="#547867" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="490" y="110" width="130" height="70" rx="10"/><rect x="720" y="110" width="130" height="70" rx="10"/><rect x="720" y="280" width="130" height="70" rx="10"/><rect x="490" y="280" width="130" height="70" rx="10"/><path d="M620 145h100m-15-10 15 10-15 10M785 180v100m-10-15 10 15 10-15M720 315H620m15-10-15 10 15 10M555 280v-70"/></g></svg>

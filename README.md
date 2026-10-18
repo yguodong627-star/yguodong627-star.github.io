@@ -16,7 +16,7 @@ npm run preview
 
 ## 内容管理
 
-- `src/i18n.ts`、`src/data/translations.en.json`：中英文界面与项目介绍；语言选择保存在浏览器，文章详情保留中文原文。
+- `src/i18n.ts`、`src/data/translations.en.json`：中英文界面与项目介绍；语言选择保存在浏览器，文章详情的标题与正文保留中文，列表标题及文章和项目封面随语言切换。
 - `src/content.ts`：姓名、身份、首页文案与 14 件作品的资料。
 - `src/data/articles.json`：10 篇文章及正文结构，日期依据内容时间线安排并倒序显示；核对依据见《文章日期核对记录.md》。
 - `src/articles.tsx`、`src/articles.css`：文章列表（每页 4 篇，日期倒序）、主题筛选、封面、正文、目录与阅读时间。
@@ -26,7 +26,9 @@ npm run preview
 - `src/styles.css`、`src/depth-motion.css`：全站视觉、响应式布局和层次效果。
 - `src/use-page-motion.ts`：按页面与滚动触发的一次性入场动效；尊重减少动态效果的系统偏好。
 - `public/media/articles/`：单独绘制的 SVG 文章封面，未使用原 Word 文档图片。
-- `public/media/portfolio/`：真实项目界面截图，原始资料不在此仓库。
+- `public/media/portfolio/`：真实项目界面截图；screens/en/ 为仅用于封面的英文翻译预览，原项目不变。
+- `scripts/cover-previews/`：英文项目封面的来源版本、翻译文案与采集说明。
+- `scripts/build-english-article-covers.mjs`：生成文章英文 SVG 封面。
 
 头像、个人照片、完整个人简介、工作经历和新增联系方式暂不展示。Y 字标是当前品牌视觉。现有 GitHub 联系入口保留。文末参考资料、编辑说明与延伸阅读已按要求从网页正文移除；阅读时间按正文长度估算。
 

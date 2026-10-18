@@ -5,9 +5,9 @@ import { ArrowUpRight, ArrowRight, ChevronLeft, Github } from 'lucide-react';
 import { projects, type Project } from './content';
 
 export function ProjectCover({ project }: { project: Project }) {
-  useLanguage();
+  const language = useLanguage();
   return <div className={`portfolio-cover screenshot-cover cover--${project.slug}`}>
-    <div className="cover-live-window"><div className="cover-live-bar" aria-hidden="true"><i/><i/><i/><span>{project.url.replace('https://', '')}</span></div><img src={project.image} alt={t(`${project.title}真实项目界面`)} loading="lazy" decoding="async"/></div>
+    <div className="cover-live-window"><div className="cover-live-bar" aria-hidden="true"><i/><i/><i/><span>{project.url.replace('https://', '')}</span></div><img src={language === 'en' ? project.image.replace('/screens/', '/screens/en/') : project.image} alt={language === 'en' ? `${t(project.title)} — translated interface preview` : t(`${project.title}真实项目界面`)} loading="lazy" decoding="async"/></div>
   </div>;
 }
 

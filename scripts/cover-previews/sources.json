@@ -1,0 +1,94 @@
+{
+  "capturedOn": "2026-10-19",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "note": "Translated interface previews rendered locally from original project code. Original project sites and detail gallery screenshots are unchanged.",
+  "projects": [
+    {
+      "slug": "zhoubao",
+      "source": "https://github.com/yguodong627-star/vibe-zhoubao",
+      "commit": "e2c7c337493bfe87c27a88f07b031888c0f135e6",
+      "image": "./media/portfolio/screens/en/zhoubao.webp"
+    },
+    {
+      "slug": "piaoju",
+      "source": "https://github.com/yguodong627-star/vibe-piaoju",
+      "commit": "c5f0b560b4d5089c79d119a1d301aef5e7174505",
+      "image": "./media/portfolio/screens/en/piaoju.webp"
+    },
+    {
+      "slug": "zhuanwen",
+      "source": "https://github.com/yguodong627-star/vibe-zhuanwen",
+      "commit": "e98db82948debba22fab4dd9c6d2a06bbfd69ea7",
+      "image": "./media/portfolio/screens/en/zhuanwen.webp"
+    },
+    {
+      "slug": "pdfbox",
+      "source": "https://github.com/yguodong627-star/vibe-pdfbox",
+      "commit": "038968b447c08651b98599e25e2f7da06f571eda",
+      "image": "./media/portfolio/screens/en/pdfbox.webp"
+    },
+    {
+      "slug": "gongzuotai",
+      "source": "https://github.com/yguodong627-star/vibe-gongzuotai",
+      "commit": "465aafc001878c23ca8b544a7e735853cf1d1387",
+      "image": "./media/portfolio/screens/en/gongzuotai.webp"
+    },
+    {
+      "slug": "crm",
+      "source": "https://github.com/yguodong627-star/vibe-crm",
+      "commit": "23bab7cb4981706924b2a04cac767bec961b87f8",
+      "image": "./media/portfolio/screens/en/crm.webp"
+    },
+    {
+      "slug": "kaidan",
+      "source": "https://github.com/yguodong627-star/vibe-kaidan",
+      "commit": "9661eb43dfa85f0bdffafab84661b5d025a5632c",
+      "image": "./media/portfolio/screens/en/kaidan.webp"
+    },
+    {
+      "slug": "profit-calc",
+      "source": "https://github.com/yguodong627-star/vibe-profit-calc",
+      "commit": "44f3d77545c6925ff5fc91082c60ee74f0cc874c",
+      "image": "./media/portfolio/screens/en/profit-calc.webp"
+    },
+    {
+      "slug": "fenhao",
+      "source": "https://github.com/yguodong627-star/vibe-fenhao",
+      "commit": "7709e1eb2017380638133049f43a1afb65310884",
+      "image": "./media/portfolio/screens/en/fenhao.webp"
+    },
+    {
+      "slug": "caiwu",
+      "source": "https://github.com/yguodong627-star/vibe-caiwu",
+      "commit": "d3c878c18608967297951e606cea9bbf5ae30c69",
+      "image": "./media/portfolio/screens/en/caiwu.webp"
+    },
+    {
+      "slug": "subwake",
+      "source": "https://github.com/yguodong627-star/vibe-subwake",
+      "commit": "77eea7491fc0ad3e3ef21963c1d358662e065b2b",
+      "image": "./media/portfolio/screens/en/subwake.webp"
+    },
+    {
+      "slug": "liteshot",
+      "source": "https://github.com/yguodong627-star/vibe-liteshot",
+      "commit": "e9634ce2946affb03c34a971ca1645a1d1ab48ca",
+      "image": "./media/portfolio/screens/en/liteshot.webp"
+    },
+    {
+      "slug": "shoujixiang",
+      "source": "https://github.com/yguodong627-star/vibe-shoujixiang",
+      "commit": "b2bcac3c9a79611678c86afcc5e47a7c7eb5f89a",
+      "image": "./media/portfolio/screens/en/shoujixiang.webp"
+    },
+    {
+      "slug": "shuanglian",
+      "source": "https://github.com/yguodong627-star/vibe-shuanglian",
+      "commit": "1a40a1553aba23f08431034f214bd9b7f77303f1",
+      "image": "./media/portfolio/screens/en/shuanglian.webp"
+    }
+  ]
+}

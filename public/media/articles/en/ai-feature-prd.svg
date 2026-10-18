@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+<rect width="960" height="540" fill="#e9ddd7"/>
+<g fill="none" stroke="#996c59" stroke-width=".6" opacity=".09"><path d="M465 70V410"/><path d="M500 70V410"/><path d="M535 70V410"/><path d="M570 70V410"/><path d="M605 70V410"/><path d="M640 70V410"/><path d="M675 70V410"/><path d="M710 70V410"/><path d="M745 70V410"/><path d="M780 70V410"/><path d="M815 70V410"/><path d="M850 70V410"/><path d="M885 70V410"/><path d="M465 95H885"/><path d="M465 130H885"/><path d="M465 165H885"/><path d="M465 200H885"/><path d="M465 235H885"/><path d="M465 270H885"/><path d="M465 305H885"/><path d="M465 340H885"/><path d="M465 375H885"/><path d="M465 410H885"/></g>
+<path d="M48 65H912M48 474H912" stroke="#996c59" opacity=".3"/>
+<g fill="#996c59" font-family="Inter,Arial,sans-serif"><text x="48" y="45" font-size="13" letter-spacing="3">YANG / FIELD NOTES</text><text x="912" y="45" font-size="13" text-anchor="end">06</text>
+<text x="48" y="160" font-size="14" letter-spacing="2">AI PRODUCT / PRD</text>
+<text x="48" y="234" font-size="32" font-family="Inter,Arial,sans-serif">Write requirements.</text>
+<text x="48" y="287" font-size="32" font-family="Inter,Arial,sans-serif">Define acceptance.</text>
+<text x="48" y="445" font-size="12" letter-spacing="2">IDEAS · SYSTEMS · PRACTICE</text><text x="48" y="508" font-size="12" letter-spacing="2">AI PRODUCT THINKING</text><text x="912" y="508" font-size="12" text-anchor="end">GUODONG YANG</text></g>
+<g fill="none" stroke="#996c59" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M550 100h190l65 65v210H550zM740 100v65h65M585 205h100m-100 35h170m-170 35h135"/><rect x="595" y="315" width="20" height="20"/><path d="m600 323 7 7 13-17m12 12h110"/></g></svg>
