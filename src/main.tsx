@@ -25,6 +25,7 @@ function App() {
   const [overHero, setOverHero] = useState(true);
   const video = useRef<HTMLVideoElement>(null);
   const home = path === '/';
+  const contactInvite = home || path === '/about';
   const works = path === '/works' || path.startsWith('/works/');
   usePageMotion(path);
   useEffect(() => {
@@ -96,7 +97,6 @@ function App() {
             {articles.length ? <div className="journal-home-grid">{articles.slice(0, 3).map(a => <ArticleCard key={a.slug} article={a} compact/>)}</div> : <div className="home-article-empty"><span className="article-index">—</span><div><h3>{t("文字，正在酝酿。")}</h3><p>{t("新的思考会在这里慢慢展开。")}</p></div><a href="#/articles" aria-label={t("进入文章列表")}><ArrowUpRight size={22}/></a></div>}
           </section>
           <section className="home-section home-about page-shell" aria-labelledby="home-about-title"><div><p className="section-index">04 / ABOUT ME</p><h2 id="home-about-title">{t("你好，我是杨国栋。")}</h2><p className="home-about-role">{t("AI 产品经理")}</p><p className="home-about-description">{t(profile.description)}</p><div className="about-tags"><span>{t("AI 产品")}</span><span>{t("写作与思考")}</span><span>{t("创造与实践")}</span></div><a className="text-link" href="#/about">{t("更多关于我")}<ArrowUpRight size={16}/></a></div><div className="about-monogram" aria-label={t("杨国栋字标")}><span>{t("杨")}</span><small>YANG GUODONG</small></div></section>
-          <section className="contact-band"><div className="page-shell"><p className="section-index">05 / KEEP IN TOUCH</p><div className="contact-layout"><div><h2>{t("让想法，继续发生。")}</h2><p>{t("欢迎通过邮箱、电话或微信与我交流。")}</p></div><div className="contact-actions"><ContactMethods/><a className="contact-button" href={profile.github} target="_blank" rel="noreferrer"><Github size={19}/> {t("访问我的 GitHub")}<ArrowUpRight size={18}/></a></div></div></div></section>
         </div>
       </> : path === '/articles' ? <ArticlesPage/>
         : path === '/works' ? <WorksPage/>
@@ -105,7 +105,7 @@ function App() {
         : path.startsWith('/articles/') && articles.find(a => `/articles/${a.slug}` === path) ? <ArticlePage key={path} article={articles.find(a => `/articles/${a.slug}` === path)!}/>
         : <section className="page-shell inner-page"><PageTitle kicker="404" title={t("这一页还没有故事。")} description="回到首页，继续探索。"/><Button asChild><a href="#/">{t("返回首页")}<ArrowRight size={16}/></a></Button></section>}
     </main>
-    <footer className="rich-footer"><div className="page-shell"><div className="footer-top"><div><a className="footer-brand" href="#/">YANG</a><p>{t("把想法写下来，把灵感做出来。")}</p></div><nav aria-label={t("页脚导航")}><span>{t("导航 / MENU")}</span>{nav.map(n => <a key={n.path} href={`#${n.path}`}>{t(n.label)}</a>)}</nav><div className="footer-contact"><span>{t("联系 / CONTACT")}</span><ContactMethods/><a href={profile.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></div><div className="footer-bottom"><span>© {new Date().getFullYear()} {t("杨国栋")}</span><span>THOUGHTS & CREATIONS</span></div></div></footer>
+    <footer className={`rich-footer ${contactInvite ? 'footer-with-invite' : ''}`}><div className="page-shell"><div className="footer-top"><div className="footer-intro">{contactInvite ? <><p className="section-index">{home ? '05 / KEEP IN TOUCH' : '03 / GET IN TOUCH'}</p><h2>{t(home ? '让想法，继续发生。' : '从一个想法，开始聊聊。')}</h2><p>{t("欢迎通过邮箱、电话或微信与我交流。")}</p></> : <><a className="footer-brand" href="#/">YANG</a><p>{t("把想法写下来，把灵感做出来。")}</p></>}</div><nav aria-label={t("页脚导航")}><span>{t("导航 / MENU")}</span>{nav.map(n => <a key={n.path} href={`#${n.path}`}>{t(n.label)}</a>)}</nav><div className="footer-contact"><span>{t("联系 / CONTACT")}</span><ContactMethods/><a href={profile.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14}/></a></div></div><div className="footer-bottom"><span className="footer-signature">{contactInvite && <a className="footer-brand" href="#/">YANG</a>}<span>© {new Date().getFullYear()} {t("杨国栋")}</span></span><span>THOUGHTS & CREATIONS</span></div></div></footer>
   </>;
 }
 function ContactMethods() {
@@ -127,7 +127,6 @@ function AboutPage() {
     <section className="about-facts page-shell" aria-label={t("个人空间概况")}><div><span className="fact-value">{t("AI 产品经理")}</span><span className="fact-label">{t("当前身份 / ROLE")}</span></div><div><span className="fact-value">{String(projects.length).padStart(2, '0')}<small> {t("件")}</small></span><span className="fact-label">{t("当前展示作品 / WORKS")}</span></div><div><span className="fact-value">{t("持续更新")}<span className="status-dot"/></span><span className="fact-label">{t("这个空间的状态 / STATUS")}</span></div></section>
     <section className="about-interests page-shell" aria-labelledby="about-interests-title"><div className="content-section-heading"><div><p className="section-index">01 / WHAT YOU WILL FIND HERE</p><h2 id="about-interests-title">{t("在这里，读到与看到。")}</h2></div><span className="small-label">{t("思考 · 记录 · 实践")}</span></div><div className="about-interest-grid">{spaces.map(item => <article key={item.title}><item.icon size={30} strokeWidth={1}/><span>{t(item.label)}</span><h3>{t(item.title)}</h3><p>{t(item.text)}</p></article>)}</div></section>
     <section className="about-recent page-shell"><div className="content-section-heading"><div><p className="section-index">02 / RECENT WRITING</p><h2>{t("最近写下的。")}</h2><p className="section-description">{t("关于 AI、产品与实践的近期思考。")}</p></div><a className="section-more" href="#/articles">{t("全部文章")}<ArrowUpRight size={16}/></a></div><div className="journal-home-grid">{articles.slice(0, 3).map(a => <ArticleCard key={a.slug} article={a} compact/>)}</div></section>
-    <section className="contact-band about-contact"><div className="page-shell"><p className="section-index">03 / GET IN TOUCH</p><div className="contact-layout"><div><h2>{t("从一个想法，开始聊聊。")}</h2><p>{t("欢迎通过邮箱、电话或微信与我交流。")}</p></div><div className="contact-actions"><ContactMethods/><a className="contact-button" href={profile.github} target="_blank" rel="noreferrer"><Github size={19}/> {t("访问我的 GitHub")}<ArrowUpRight size={18}/></a></div></div></div></section>
   </div>;
 }
 function PageTitle({ kicker, title, description }: { kicker: string; title: string; description: string }) {
