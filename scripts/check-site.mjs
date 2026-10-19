@@ -9,9 +9,19 @@ const articles = JSON.parse(readFileSync(resolve(root, 'src/data/articles.json')
 const dateAudit = JSON.parse(readFileSync(resolve(root, 'scripts/article-date-audit.json'), 'utf8'));
 const errors = [];
 const translations = JSON.parse(readFileSync(resolve(root, 'src/data/translations.en.json'), 'utf8'));
+const experience = JSON.parse(readFileSync(resolve(root, 'src/data/experience.json'), 'utf8'));
 function checkTranslation(text, slug) {
   if (/[\u3400-\u9fff]/.test(text ?? '') && !translations[text]?.trim()) errors.push(`${slug}: missing English translation: ${text}`);
 }
+const experienceIds = new Set();
+for (const role of experience.roles) {
+  if (!role.id || experienceIds.has(role.id)) errors.push('Experience: missing or duplicate role id');
+  experienceIds.add(role.id);
+  if (!/^\d{4}\.(0[1-9]|1[0-2])$/.test(role.start) || !/^\d{4}\.(0[1-9]|1[0-2])$/.test(role.end) || role.start > role.end) errors.push(`${role.id}: invalid experience period`);
+  [role.company, role.role, role.focus].forEach(text => checkTranslation(text, role.id));
+  for (const project of role.projects) [project.title, project.ownership, ...project.responsibilities, ...project.results].forEach(text => checkTranslation(text, role.id));
+}
+checkTranslation(experience.education, 'education');
 const assets = new Set(['./favicon.svg', './media/hero.mp4', './media/hero-poster.jpg', './media/inter.ttf', './media/instrument-serif.ttf']);
 for (const [type, items] of [['project', projects], ['article', articles]]) {
   const seen = new Set();

@@ -5,6 +5,7 @@ import { ArrowUpRight, ArrowRight, ArrowDown, Menu, X, Pause, Play, Github, Laye
 import { Button } from './components/ui/button';
 import { profile, articles, projects, principles, practice } from './content';
 import { ProjectCard, WorksPage, ProjectPage } from './portfolio';
+import { ExperienceSection } from './experience';
 import { ArticlesPage, ArticlePage, ArticleCard } from './articles';
 import './styles.css';
 import './articles.css';
@@ -104,7 +105,7 @@ function App() {
             <div className="content-section-heading"><div><p className="section-index">03 / JOURNAL</p><h2 id="home-writing-title">{t("把思考，落在文字里。")}</h2><p className="section-description">{t("关于 AI、产品与创造的思考，记录理解如何在实践中逐渐清晰。")}</p></div><a className="section-more" href="#/articles">{t("全部文章")}<ArrowUpRight size={17}/></a></div>
             {articles.length ? <div className="journal-home-grid">{articles.slice(0, 3).map(a => <ArticleCard key={a.slug} article={a} compact/>)}</div> : <div className="home-article-empty"><span className="article-index">—</span><div><h3>{t("文字，正在酝酿。")}</h3><p>{t("新的思考会在这里慢慢展开。")}</p></div><a href="#/articles" aria-label={t("进入文章列表")}><ArrowUpRight size={22}/></a></div>}
           </section>
-          <section className="home-section home-about page-shell" aria-labelledby="home-about-title"><div><p className="section-index">04 / ABOUT ME</p><h2 id="home-about-title">{t("你好，我是杨国栋。")}</h2><p className="home-about-role">{t("AI 产品经理")}</p><p className="home-about-description">{t(profile.description)}</p><div className="about-tags"><span>{t("AI 产品")}</span><span>{t("写作与思考")}</span><span>{t("创造与实践")}</span></div><a className="text-link" href="#/about">{t("更多关于我")}<ArrowUpRight size={16}/></a></div><div className="about-monogram" aria-label={t("杨国栋字标")}><span>{t("杨")}</span><small>YANG GUODONG</small></div></section>
+          <ExperienceSection/>
         </div>
       </> : path === '/articles' ? <ArticlesPage/>
         : path === '/works' ? <WorksPage/>

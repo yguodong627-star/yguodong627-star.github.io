@@ -22,6 +22,7 @@ npm run preview
 - `src/articles.tsx`、`src/articles.css`：文章列表（每页 4 篇，日期倒序）、主题筛选、封面、正文、目录与阅读时间。
 - `src/portfolio.tsx`：作品分类、每页 4 个的分页、真实界面封面与详情画廊。
 - `src/main.tsx`：导航、首页、关于我和页脚。
+- `src/experience.tsx`、`src/experience.css`、`src/data/experience.json`：首页深色工作经历区、职责展开与简历摘要。
 - `src/portfolio-theme.css`：作品页深色主题、真实截图封面、筛选和语言切换样式。
 - `src/styles.css`、`src/depth-motion.css`：全站视觉、响应式布局和层次效果。
 - `src/use-page-motion.ts`：按页面与滚动触发的一次性入场动效；尊重减少动态效果的系统偏好。
@@ -30,7 +31,7 @@ npm run preview
 - `scripts/cover-previews/`：英文项目封面的来源版本、翻译文案与采集说明。
 - `scripts/build-english-article-covers.mjs`：生成文章英文 SVG 封面。
 
-头像、个人照片、完整个人简介和工作经历暂不展示。Y 字标是当前品牌视觉。首页、关于我和全站页脚展示用户授权公开的邮箱、电话（微信同号）与 GitHub，联系信息在 src/content.ts 的 profile 中维护。文末参考资料、编辑说明与延伸阅读已按要求从网页正文移除；阅读时间按正文长度估算。
+头像、个人照片和完整个人简介暂不展示。首页工作经历根据用户提供的简历整理，支持中英文与职责展开。Y 字标是当前品牌视觉。首页、关于我和全站页脚展示用户授权公开的邮箱、电话（微信同号）与 GitHub，联系信息在 src/content.ts 的 profile 中维护。文末参考资料、编辑说明与延伸阅读已按要求从网页正文移除；阅读时间按正文长度估算。
 
 详细资料维护见《文章导入说明.md》《作品内容与图片说明.md》。重新运行文章导入脚本会覆盖文章数据与主题封面，执行前应保留手动编辑。上级目录的原始 Word 文档与 portfolio 资料不会上传到此仓库。
 
