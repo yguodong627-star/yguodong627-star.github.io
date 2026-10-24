@@ -7,7 +7,7 @@ export const profile = {
   headline: ['把想法写下来，', '把灵感做出来。'],
   description: '这里有我的思考、作品，以及不断探索的记录。',
   github: 'https://github.com/yguodong627-star',
-  email: 'ethan@163.com',
+  email: 'ethan6118@163.com',
   phone: '18579856118',
 };
 export type ArticleBlock =
